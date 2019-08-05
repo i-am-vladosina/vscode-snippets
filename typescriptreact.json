@@ -1,0 +1,41 @@
+{
+  "import * as React from 'react'": {
+    "prefix": "imr",
+    "body": ["import * as React from 'react'"],
+    "description": "import * as React from 'react'"
+  },
+  "export interface Props {}; export const Component: React.FC<Props> = ({}: Props) => {}": {
+    "prefix": "fc",
+    "body": [
+      "export interface $1Props {",
+      " ",
+      "};",
+      "",
+      "export const $1: React.FC<$1Props> = ({}: $1Props) => {",
+      "  return ( );",
+      "};",
+      "",
+      "$1.displayName = '$1';"
+    ],
+    "description": "React Functional Component"
+  },
+  "export interface Props {}; export const Component: React.FC<Props> = React.memo({}: Props) => {}": {
+    "prefix": "mfc",
+    "body": [
+      "export interface $1Props {",
+      " ",
+      "};",
+      "",
+      "function areEqual$1Props(prevProps: $1Props, nextProps: $1Props) {",
+      "  return false",
+      "}",
+      "",
+      "export const $1: React.FC<$1Props> = React.memo(({}) => {",
+      "  return ( );",
+      "}, areEqual$1Props);",
+      "",
+      "$1.displayName = '$1';"
+    ],
+    "description": "React Memo Functional Component"
+  }
+}

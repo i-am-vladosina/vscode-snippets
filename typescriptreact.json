@@ -1,14 +1,14 @@
 {
-  "import * as React from 'react'": {
+  "React module import": {
     "prefix": "imr",
-    "body": ["import * as React from 'react'"],
-    "description": "import * as React from 'react'"
+    "body": ["import * as React from 'react';"],
+    "description": "React Module Import"
   },
   "export interface Props {}; export const Component: React.FC<Props> = ({}: Props) => {}": {
     "prefix": "fc",
     "body": [
       "export interface $1Props {",
-      " ",
+      "  ",
       "};",
       "",
       "export const $1: React.FC<$1Props> = ({}: $1Props) => {",
@@ -23,19 +23,173 @@
     "prefix": "mfc",
     "body": [
       "export interface $1Props {",
-      " ",
+      "  ",
       "};",
       "",
       "function areEqual$1Props(prevProps: $1Props, nextProps: $1Props) {",
-      "  return false",
+      "  return false;",
       "}",
       "",
-      "export const $1: React.FC<$1Props> = React.memo(({}) => {",
+      "export const $1: React.FC<$1Props> = React.memo(({}: $1Props) => {",
       "  return ( );",
       "}, areEqual$1Props);",
       "",
       "$1.displayName = '$1';"
     ],
     "description": "React Memo Functional Component"
+  },
+
+  "Component Class": {
+    "prefix": "cc",
+    "body": [
+      "export interface $1Props {",
+      "  ",
+      "};",
+      "",
+      "interface $1State {",
+      "  ",
+      "};",
+      "",
+      "export class $1 extends Component<$1Props, $1State> {",
+      "  state: $1State = {",
+      "    ",
+      "  };",
+      "  render() {",
+      "    return ( );",
+      "  }",
+      "};"
+    ],
+    "description": "Component Class"
+  },
+  "Full Lifecycle Component Class": {
+    "prefix": "flcc",
+    "body": [
+      "export interface $1Props {",
+      "  ",
+      "};",
+      "",
+      "interface $1State {",
+      "",
+      "};",
+      "",
+      "export class $1 extends Component<$1Props, $1State> {",
+      "",
+      "  constructor(props: $1Props) {",
+      "    super(props);",
+      "    this.state = {",
+      "      ",
+      "    };",
+      "    ",
+      "  }  ",
+      "",
+      "  shouldComponentUpdate(prevProps: $1Props, prevState: $1State) {",
+      "    return true;",
+      "  }",
+      "",
+      "  componentDidMount() {",
+      "    ",
+      "  }",
+      "",
+      "  componentDidUpdate(prevProps: $1Props) {",
+      "    ",
+      "  }",
+      "",
+      "  componentWillUnmount() {",
+      "",
+      "  }",
+      "",
+      "  render() {",
+      "    return ( );",
+      "  }",
+      "};"
+    ],
+    "description": "Full Lifecycle Component Class"
+  },
+  "Abstract Component Class": {
+    "prefix": "acc",
+    "body": [
+      "export interface $1Props {",
+      "  ",
+      "};",
+      "",
+      "interface $1State {",
+      "",
+      "};",
+      "",
+      "export abstract class $1<P extends $1Props = $1Props, S extends $1State = $1State> extends Component<P, S> {",
+      "  constructor(props: P) {",
+      "    super(props);",
+      "",
+      "    this.state = {",
+      "",
+      "    } as S;",
+      "  }",
+      "",
+      "  render() {",
+      "    return ( );",
+      "  }",
+      "};"
+    ],
+    "description": "Abstract Component Class"
+  },
+  "Component Should Update": {
+    "prefix": "csu",
+    "body": ["componentShouldUpdate(prevProps: $1Props, prevState: $1State) {", "  return true;", "}"],
+    "description": "Component Should Update"
+  },
+  "Component Did Mount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "  $1", "}"],
+    "description": "Component Did Mount"
+  },
+  "Component Did Update": {
+    "prefix": "cdu",
+    "body": ["componentDidUpdate(prevProps: $1Props) {", "  $0", "}"],
+    "description": "Component Did Update"
+  },
+  "Component Will Unmount": {
+    "prefix": "cwu",
+    "body": ["componentWillUnmount() {", "  $1", "}"],
+    "description": "Component Will Unmount"
+  },
+  "Render": {
+    "prefix": "rdr",
+    "body": ["render() {", "  return (", "    $1", "  );", "}"],
+    "description": "Render"
+  },
+  "Import Single Export Declaration": {
+    "prefix": "im",
+    "body": ["import { $0 } from '$1';"],
+    "description": "Import Single Export Declaration"
+  },
+  "Import Entire Module Declaration": {
+    "prefix": "iem",
+    "body": ["import * as $0 from '$1';"],
+    "description": "Import Entire Module Declaration"
+  },
+  "Import Default Module Declaration": {
+    "prefix": "idm",
+    "body": ["import $0 from '$1';"],
+    "description": "Import Default Module Declaration"
+  },
+  "Use State Hook": {
+    "prefix": "ush",
+    "body": ["const [$1, $2] = React.useState($0);"],
+    "description": "Use State Hook"
+  },
+  "Use Effect Hook": {
+    "prefix": "ueh",
+    "body": ["React.useEffect(() => {", "  return () => {};", "});"],
+    "description": "Use Effect Hook"
+  },
+  "Use Callback Hook": {
+    "prefix": "uch",
+    "body": ["const $1 = React.useCallback(() => {", "  $2", "}, [$0]);"],
+    "description": "Use Callback Hook"
+  },
+  "Import Classnames Module": {
+    "prefix": "cn",
+    "body": ["import * as cn from 'classnames';"],
+    "description": "Import Classnames Module"
   }
 }

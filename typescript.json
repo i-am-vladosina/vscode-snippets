@@ -1,4 +1,19 @@
 {
+  "Import Single Export Declaration": {
+    "prefix": "im",
+    "body": ["import { $1 } from '$0';"],
+    "description": "Import Single Export Declaration"
+  },
+  "Import Entire Module Declaration": {
+    "prefix": "iem",
+    "body": ["import * as $1 from '$0';"],
+    "description": "Import Entire Module Declaration"
+  },
+  "Import Default Module Declaration": {
+    "prefix": "idm",
+    "body": ["import $1 from '$0';"],
+    "description": "Import Default Module Declaration"
+  },
   "class": {
     "prefix": "cls",
     "body": ["export class $1 {", "  ", "}"],

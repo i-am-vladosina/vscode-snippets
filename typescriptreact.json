@@ -9,9 +9,9 @@
     "body": [
       "export interface $1Props {",
       "  ",
-      "};",
+      "}",
       "",
-      "export const $1: React.FC<$1Props> = ({}: $1Props) => {",
+      "export const $1: React.FC<$1Props> = ({}) => {",
       "  return ( );",
       "};",
       "",
@@ -24,14 +24,14 @@
     "body": [
       "export interface $1Props {",
       "  ",
-      "};",
+      "}",
       "",
       "function areEqual$1Props(prevProps: $1Props, nextProps: $1Props) {",
       "  return false;",
       "}",
       "",
-      "export const $1: React.FC<$1Props> = React.memo(({}: $1Props) => {",
-      "  return ( );",
+      "export const $1: React.FC<$1Props> = React.memo(({}) => {",
+      "  return ($0);",
       "}, areEqual$1Props);",
       "",
       "$1.displayName = '$1';"
@@ -44,11 +44,11 @@
     "body": [
       "export interface $1Props {",
       "  ",
-      "};",
+      "}",
       "",
       "interface $1State {",
       "  ",
-      "};",
+      "}",
       "",
       "export class $1 extends Component<$1Props, $1State> {",
       "  state: $1State = {",
@@ -66,11 +66,11 @@
     "body": [
       "export interface $1Props {",
       "  ",
-      "};",
+      "}",
       "",
       "interface $1State {",
-      "",
-      "};",
+      "  ",
+      "}",
       "",
       "export class $1 extends Component<$1Props, $1State> {",
       "",
@@ -110,11 +110,11 @@
     "body": [
       "export interface $1Props {",
       "  ",
-      "};",
+      "}",
       "",
       "interface $1State {",
       "",
-      "};",
+      "}",
       "",
       "export abstract class $1<P extends $1Props = $1Props, S extends $1State = $1State> extends Component<P, S> {",
       "  constructor(props: P) {",
@@ -139,7 +139,7 @@
   },
   "Component Did Mount": {
     "prefix": "cdm",
-    "body": ["componentDidMount() {", "  $1", "}"],
+    "body": ["componentDidMount() {", "$1", "}"],
     "description": "Component Did Mount"
   },
   "Component Did Update": {
@@ -187,9 +187,34 @@
     "body": ["const $1 = React.useCallback(() => {", "  $2", "}, [$0]);"],
     "description": "Use Callback Hook"
   },
+  "Use Ref Hook": {
+    "prefix": "urh",
+    "body": ["const $1 = React.useRef<$0>($2);"],
+    "description": "Use Ref Hook"
+  },
   "Import Classnames Module": {
     "prefix": "cn",
     "body": ["import * as cn from 'classnames';"],
     "description": "Import Classnames Module"
+  },
+  "Import Moment Module": {
+    "prefix": "mm",
+    "body": ["import * as moment from 'moment';"],
+    "description": "Import Moment Module"
+  },
+  "Image Full Path": {
+    "prefix": "fullPath",
+    "body": ["app.resources.fullPath('$1')"],
+    "description": "Image Full Path"
+  },
+  "Import Custom React Class Component": {
+    "prefix": "rcc",
+    "body": ["import { Component } from 'app/react';"],
+    "description": "Import Custom React Class Component"
+  },
+  "Import Locale": {
+    "prefix": "ii",
+    "body": ["import i from 'app/locale/i18nts';"],
+    "description": "Import Locale"
   }
 }

@@ -18,5 +18,10 @@
     "prefix": "cls",
     "body": ["export class $1 {", "  ", "}"],
     "description": "Class"
+  },
+  "Import Locale": {
+    "prefix": "ii",
+    "body": ["import i from 'app/locale/i18nts';"],
+    "description": "Import Locale"
   }
 }

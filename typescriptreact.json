@@ -6,17 +6,7 @@
   },
   "export interface Props {}; export const Component: React.FC<Props> = ({}: Props) => {}": {
     "prefix": "fc",
-    "body": [
-      "export interface $1Props {",
-      "  ",
-      "}",
-      "",
-      "export const $1: React.FC<$1Props> = ({}) => {",
-      "  return ( );",
-      "};",
-      "",
-      "$1.displayName = '$1';"
-    ],
+    "body": ["export interface $1Props {", "  ", "}", "", "export function $1({}: $1Props) {", "  return ($0);", "};"],
     "description": "React Functional Component"
   },
   "export interface Props {}; export const Component: React.FC<Props> = React.memo({}: Props) => {}": {
@@ -26,15 +16,9 @@
       "  ",
       "}",
       "",
-      "function areEqual$1Props(prevProps: $1Props, nextProps: $1Props) {",
-      "  return false;",
-      "}",
-      "",
-      "export const $1: React.FC<$1Props> = React.memo(({}) => {",
+      "export const $1: React.FC<$1Props> = React.memo(function $1({}) {",
       "  return ($0);",
-      "}, areEqual$1Props);",
-      "",
-      "$1.displayName = '$1';"
+      "});"
     ],
     "description": "React Memo Functional Component"
   },
